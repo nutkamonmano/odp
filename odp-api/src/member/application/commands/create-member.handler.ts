@@ -25,9 +25,9 @@ export class CreateMemberHandler
     const today = new Date();
     const member = new MemberEntity();
     Object.assign(member, createMemberDto);
-    member.companyId = createdBy.companySelected;
-    member.createdBy = createdBy.id;
-    member.createdAt = today;
+    // member.companyId = createdBy.companySelected;
+    // member.createdBy = createdBy.id;
+    // member.createdAt = today;
     const newMember = await this.memberRepository.save(member);
     return new ResponseDto<MemberEntity>(newMember);
   }
