@@ -38,10 +38,11 @@
                                 [formControlName]="'name'">
                         </mat-form-field>
                         <mat-form-field class="w-full" subscriptSizing="dynamic">
-                            <mat-label>วันเกิด</mat-label>
-                            <input matInput [placeholder]="'วันเกิด'" name="input_name"
-                                [formControlName]="'name'">
-                        </mat-form-field>
+                      <mat-label>วันเกิด</mat-label>
+                         <mat-select formControlName="birthday" placeholder="เลือกวันเกิด">
+                         <mat-option *ngFor="let day of days" [value]="day">{{ day }}</mat-option>
+                        </mat-select>
+                        </mat-form-field>   
                         <mat-form-field class="w-full" subscriptSizing="dynamic">
                             <mat-label>เบอร์โทร</mat-label>
                             <input matInput [placeholder]="'เบอร์โทร'" name="input_name"
