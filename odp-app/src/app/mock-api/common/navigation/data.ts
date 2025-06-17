@@ -43,6 +43,13 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:user-group',
         link: '/persons',
     },
+        {
+        id: 'member',
+        title: 'สมาชิก',
+        type: 'basic',
+        icon: 'heroicons_outline:user-group',
+        link: '/menbers',
+    },
     {
         id: 'report',
         title: 'รายงาน',
