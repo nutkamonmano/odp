@@ -24,9 +24,9 @@ export class UpdateMemberHandler
     }
 
     Object.assign(member, updateMemberDto);
-    member.updatedAt = new Date();
-    member.updatedBy = updatedBy.id;
-    member.companyId = updatedBy.companySelected;
+    // member.updatedAt = new Date();
+    // member.updatedBy = updatedBy.id;
+    // member.companyId = updatedBy.companySelected;
     // อัปเดตข้อมูลในฐานข้อมูล
     const updMember = await this.memberRepository.update(member);
     return new ResponseDto<MemberEntity>(updMember);

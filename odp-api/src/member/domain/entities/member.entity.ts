@@ -10,15 +10,23 @@ export class MemberEntity {
 
   @Expose()
   @Prop({ type: String, unique: true, required: true })
-  name: string;
+  memberid: number;
 
   @Expose()
-  @Prop({ type: String, required: true })
-  companyId: string;
+  @Prop({ type: Number, required: true })
+  idcard: number;
   
   @Expose()
-  @Prop({ type: Date, default: Date.now })
-  createdAt: Date;
+  @Prop({ type: String, default: Date.now })
+  organization: string;
+
+   @Expose()
+  @Prop({ type: String, default: Date.now })
+  contactperson: string;
+
+  @Expose()
+  @Prop({ type: String, default: Date.now })
+  contactphone: string;
 
   @Expose()
   @Prop({ type: Date })
