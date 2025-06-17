@@ -154,6 +154,11 @@ export const appRoutes: Route[] = [
                     import('app/modules/admin/persons/person.routes'),
             },
             {
+                path: 'members',
+                loadChildren: () =>
+                    import('app/modules/admin/persons/member.routes'),
+            },
+            {
                 path: 'report',
                 loadChildren: () =>
                     import('app/modules/admin/example/example.routes'),
