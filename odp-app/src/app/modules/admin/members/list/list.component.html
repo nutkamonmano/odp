@@ -15,6 +15,8 @@
                 </div>
 
                 <div class="flex flex-auto items-center justify-end gap-x-2">
+                
+
                     <div class="w-auto">
                         <button mat-flat-button class="ml-4 w-auto bg-[#22c55e] rounded-lg text-white"
                             (click)="onOpenCreate()" name="create_user">
@@ -25,34 +27,20 @@
             </div>
             <mat-divider></mat-divider>
 
-            @if((members$ | async); as memberResp) {
+            @if((members$ | async); as memberResp){
             <div class="sm:overflow-visible overflow-x-auto w-full">
-                <!-- Table for displaying members -->
-                <table class="min-w-full table-auto border-collapse">
-                    <thead>
-                        <tr class="border-b">
-                            <th class="px-4 py-2 text-left">ชื่อ</th>
-                            <th class="px-4 py-2 text-left">อีเมล์</th>
-                            <th class="px-4 py-2 text-left">สถานะ</th>
-                            <th class="px-4 py-2 text-left">การดำเนินการ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Loop through members and display data -->
-                        <tr *ngFor="let member of memberResp">
-                            <td class="px-4 py-2">{{ member.name }}</td>
-                            <td class="px-4 py-2">{{ member.email }}</td>
-                            <td class="px-4 py-2">{{ member.status }}</td>
-                            <td class="px-4 py-2">
-                                <button (click)="onEdit(member)">แก้ไข</button>
-                                <button (click)="onDelete(member)">ลบ</button>
-                                <button (click)="onUpdateStatus(member)">อัพเดตสถานะ</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <app-table-member 
+                    [memberResp]="memberResp" 
+                    (edit)="onEdit($event)" 
+                    (delete)="onDelete($event)"
+                    (updateStatus)="onUpdateStatus($event)"
+                    (changePage)="onChangePage($event)"
+                >
+                </app-table-member>
             </div>
+
             }
+
         </mat-drawer-content>
     </mat-drawer-container>
 </div>

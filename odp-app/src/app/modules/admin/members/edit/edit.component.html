@@ -23,12 +23,27 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <mat-form-field class="w-full" subscriptSizing="dynamic">
-                            <mat-label>ชื่อ</mat-label>
-                            <input matInput [placeholder]="'ระบุชื่อ'" name="input_name"
-                                [formControlName]="'name'">
+                            <mat-label>Member ID</mat-label>
+                            <input matInput [placeholder]="'ระบุ Member ID'" name="memberid"
+                                [formControlName]="'memberid'">
+                        </mat-form-field>
+                        <mat-form-field class="w-full" subscriptSizing="dynamic">
+                            <mat-label>หน่วยงาน</mat-label>
+                            <input matInput [placeholder]="'ระบุหน่วยงาน'" name="organization"
+                                [formControlName]="'organization'">
+                        </mat-form-field>
+                        <mat-form-field class="w-full" subscriptSizing="dynamic">
+                            <mat-label>บุคคลที่สามารถติดต่อได้</mat-label>
+                            <input matInput [placeholder]="'ระบุบุคคลที่สามารถติดต่อได้'" name="contactperson"
+                                [formControlName]="'contactperson'">
+                        </mat-form-field>
+                        <mat-form-field class="w-full" subscriptSizing="dynamic">
+                            <mat-label>เบอร์โทรศัพท์ของบุคคลที่สามารถติดต่อได้</mat-label>
+                            <input matInput [placeholder]="'ระบุเบอร์โทรศัพท์ของบุคคลที่สามารถติดต่อได้'"
+                                name="contactphone" [formControlName]="'contactphone'">
                         </mat-form-field>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -39,8 +54,8 @@
                 <button mat-button (click)="onClose()" name="cancel">
                     ยกเลิก
                 </button>
-                <button mat-flat-button [color]="'primary'" [disabled]="initForm.invalid || disableSave" (click)="onSave()"
-                    name="save">
+                <button mat-flat-button [color]="'primary'" [disabled]="initForm.invalid || disableSave"
+                    (click)="onSave()" name="save">
                     บันทึก
                 </button>
             </div>

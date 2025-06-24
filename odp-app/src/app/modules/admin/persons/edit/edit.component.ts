@@ -85,17 +85,25 @@ export class EditPersonComponent implements OnInit {
     }
 
     initialForm(person?: Person): FormGroup {
-        return this._formBuilder.group(
-            {
-                name: [person?.name || '', [Validators.required]],
-            }
-        );
+        return this._formBuilder.group({
+            n_id: [''],
+            name: [''],
+            lastName: [''],
+            dob: [''],
+            phone: [''],
+            address: [''],
+        });
     }
-
 
     onSave(): void {
         this.disableSave = true;
         const payload = this.initForm.getRawValue();
+
+        // แปลง dob เป็น string ถ้าเป็น Date object
+        if (payload.dob instanceof Date) {
+            payload.dob = payload.dob.toISOString().split('T')[0]; // 'YYYY-MM-DD'
+        }
+
         if (this.isEdit) {
             this.update(this.personId, payload);
         } else {

@@ -85,13 +85,13 @@ export class EditMemberComponent implements OnInit {
     }
 
     initialForm(member?: Member): FormGroup {
-        return this._formBuilder.group(
-            {
-                name: [member?.name || '', [Validators.required]],
-            }
-        );
+        return this._formBuilder.group({
+            memberid: [''],
+            organization: [''],
+            contactperson: [''],
+            contactphone: [''],
+        });
     }
-
 
     onSave(): void {
         this.disableSave = true;
