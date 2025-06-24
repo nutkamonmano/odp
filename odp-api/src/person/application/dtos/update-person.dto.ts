@@ -20,7 +20,7 @@ export class UpdatePersonDto {
   @ApiPropertyOptional({ description: 'Your Date of birth' })
   @IsString()
   @IsOptional()
-  dob: Date;
+  dob: string;
 
   @ApiPropertyOptional({ description: 'Your Phone' })
   @IsString()

@@ -10,7 +10,23 @@ export class PersonEntity {
 
   @Expose()
   @Prop({ type: String, unique: true, required: true })
+  n_id: string;
+  @Expose()
+  @Prop({ type: String, unique: true, required: true })
   name: string;
+  @Expose()
+  @Prop({ type: String, unique: true, required: true })
+  lastName: string;
+  @Expose()
+  @Prop({ type: String, required: true })
+  dob: string;
+  @Expose()
+  @Prop({ type: String, required: true })
+  phone: string;
+  @Expose()
+  @Prop({ type: String, required: true })
+  address: string;
+
 
   @Expose()
   @Prop({ type: String, required: true })
