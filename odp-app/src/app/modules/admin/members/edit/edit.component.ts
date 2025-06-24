@@ -87,6 +87,7 @@ export class EditMemberComponent implements OnInit {
     initialForm(member?: Member): FormGroup {
         return this._formBuilder.group({
             memberid: [''],
+            idcard: [''],
             organization: [''],
             contactperson: [''],
             contactphone: [''],

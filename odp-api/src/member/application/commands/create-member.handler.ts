@@ -16,12 +16,12 @@ export class CreateMemberHandler
 
   async execute(command: CreateMemberCommand): Promise<ResponseDto<MemberEntity>> {
     const { createMemberDto, createdBy } = command;
-    const existingMember = await this.memberRepository.findByName(
-      createMemberDto.name,
-    );
-    if (existingMember) {
-      throw new BadRequestException('Member already exists');
-    }
+    // const existingMember = await this.memberRepository.findByName(
+    //   createMemberDto.name,
+    // );
+    // if (existingMember) {
+    //   throw new BadRequestException('Member already exists');
+    // }
     const today = new Date();
     const member = new MemberEntity();
     Object.assign(member, createMemberDto);
