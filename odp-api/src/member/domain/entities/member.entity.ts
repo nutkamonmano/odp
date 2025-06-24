@@ -12,9 +12,9 @@ export class MemberEntity {
   @Prop({ type: String, unique: true, required: true })
   memberid: number;
 
-  // @Expose()
-  // @Prop({ type: Number, required: true })
-  // idcard: number;
+  @Expose()
+  @Prop({ type: Number, required: true })
+  idcard: number;
   
   @Expose()
   @Prop({ type: String, default: Date.now })

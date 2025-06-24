@@ -13,7 +13,7 @@ export class CreatePersonDto {
   lastName: string;
   @ApiProperty({ description: 'date-of-birth' })
   @IsString()
-  dob: String;
+  dob: Date;
   @ApiProperty({ description: 'Phone' })
   @IsString()
   phone: string;
